@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>OPL3 Editor</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.classless.min.css" />
+    <style>
+      body {
+        min-height: 100vh;
+        display:flex;
+        flex-direction: column;
+      }
+      body >  main {
+        flex: 1;
+      }
+      body >  footer {
+        text-align: center;
+      }
+      input[type="file"], .hidden {
+        display: none;
+      }
+      button > label {
+        margin: 0;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h3>OPL3 Editor</h3>
+      <input type="file" id="upload_file">
+      <p>
+        <button><label for="upload_file">Upload IMF</label></button>
+        <a download="imf.wav" href="" id="download_wav"><button>Download WAV</button></a>
+        <!-- TODO: add a bunch of ops here -->
+      </p>
+      <audio controls loop id="audio"></audio>
+    </main>
+    <footer>
+      View source on <a href="https://github.com/konsumer/op3-editor">GitHub</a>
+    </footer>
+  </body>
+  <script type="importmap">
+    {
+      "imports": {
+        "@malvineous/opl": "./opl3/opl3.js"
+      }
+    }
+  </script>
+  <script type="module" src="opl3-editor.js"></script>
+</html>
